@@ -377,7 +377,6 @@ continue with step 2.</property>
             <child>
               <object class="GtkLabel" id="selectDirectoryDoneLabel">
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Done!</property>
                 <attributes>
                   <attribute name="font-desc" value="Sans Bold 10"/>
                   <attribute name="foreground" value="#4e4e9a9a0606"/>
