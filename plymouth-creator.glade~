@@ -425,7 +425,7 @@ continue with step 2.</property>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">THIS WILL TAKE VERY LONG TO LOAD EVERY TIME</property>
+                        <property name="label" translatable="yes">THIS WILL TAKE VERY LONG TO LOAD EVERY TIME!</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -436,7 +436,7 @@ continue with step 2.</property>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">4. Do you want to scale images up to screen size?</property>
+                        <property name="label" translatable="yes">4. Do you want to scale images to screen size?</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
