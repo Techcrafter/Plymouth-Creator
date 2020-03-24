@@ -6,7 +6,7 @@ You can use an existing .mp4 video or ven single .png files to create your own c
 When you're done, you can apply it on your own computer, or you can share it with the community.
 
 ### How to run:
-Download the .zip or the .tar.gz file from the [releases section](https://github.com/Techcrafter/Plymouth-Creator/releases), extract it and open the file "RUN ME.sh" in terminal.
+Download the .zip or the .tar.gz file with the source code from the [releases section](https://github.com/Techcrafter/Plymouth-Creator/releases), extract it and open the file "RUN ME.sh" in terminal.
 The script will install the needed packages, so you'll eventually need to enter your sudo password.
 Afterwards, the script will launch the GUI, which is self-explaining.
 
