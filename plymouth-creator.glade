@@ -355,7 +355,7 @@ continue with step 2.</property>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">5. Start generation</property>
+                        <property name="label" translatable="yes">6. Start generation</property>
                         <attributes>
                           <attribute name="font-desc" value="Sans 14"/>
                         </attributes>
@@ -436,7 +436,7 @@ continue with step 2.</property>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">4. Do you want to scale images to screen size?</property>
+                        <property name="label" translatable="yes">5. Do you want to scale images to screen size?</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -459,7 +459,20 @@ continue with step 2.</property>
               </object>
               <packing>
                 <property name="x">50</property>
-                <property name="y">182</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="loopAnimationCheckButton">
+                <property name="label" translatable="yes">4. Do you want to loop the animation?</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="x">50</property>
+                <property name="y">165</property>
               </packing>
             </child>
           </object>

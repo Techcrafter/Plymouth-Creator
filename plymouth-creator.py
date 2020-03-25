@@ -14,6 +14,7 @@ outputDirectory = ""
 
 name = ""
 description = ""
+loopAnimation = None
 scaleImages = None
 
 root = Tkinter.Tk()
@@ -41,10 +42,8 @@ class Handler:
     global scaleImages
     name = nameEntry.get_text()
     description = descriptionEntry.get_text()
-    if(scaleImagesCheckButton.get_active() == False):
-      scaleImages = False
-    else:
-      scaleImages = True
+    loopAnimation = loopAnimationCheckButton.get_active()
+    scaleImages = scaleImagesCheckButton.get_active()
     amountOfPngFiles = len(glob.glob1(outputDirectory,"*.png"))
     plymouthFile = open(outputDirectory + "/" + name + ".plymouth","w")
     plymouthFile.write("[Plymouth Theme]\n")
@@ -77,7 +76,10 @@ class Handler:
     scriptFile.write("{\n")
     scriptFile.write("  if(index >= " + str(amountOfPngFiles) + " + 1)\n")
     scriptFile.write("  {\n")
-    scriptFile.write("    image[" + str(amountOfPngFiles) + "].sprite.SetOpacity(1);\n")
+    if(loopAnimation == False):
+      scriptFile.write("    image[" + str(amountOfPngFiles) + "].sprite.SetOpacity(1);\n")
+    else:
+      scriptFile.write("    index = 1;\n")
     scriptFile.write("  }\n")
     scriptFile.write("  else\n")
     scriptFile.write("  {\n")
@@ -160,6 +162,7 @@ videoConvertionDoneLabel = builder.get_object("videoConvertionDoneLabel")
 
 nameEntry = builder.get_object("nameEntry")
 descriptionEntry = builder.get_object("descriptionEntry")
+loopAnimationCheckButton = builder.get_object("loopAnimationCheckButton")
 scaleImagesCheckButton = builder.get_object("scaleImagesCheckButton")
 
 selectDirectoryDoneLabel = builder.get_object("selectDirectoryDoneLabel")
