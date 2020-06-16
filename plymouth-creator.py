@@ -7,7 +7,9 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
+setVideoInputFile = False
 videoInputFile = ""
+setVideoOutputDirectory = False
 videoOutputDirectory = ""
 
 outputDirectory = ""
@@ -23,15 +25,26 @@ root.withdraw()
 class Handler:
   def on_selectVideoButton_clicked(self, button):
     global videoInputFile
+    global setVideoInputFile
     videoInputFile = tkFileDialog.askopenfilename(parent=root,initialdir="/home",title='Select your .mp4 video',filetypes = (("mp4 files","*.mp4"),("all files","*.*")))
-    selectVideoDoneLabel.set_text("Done!")
+    if(isinstance(videoInputFile, str)):
+      setVideoInputFile = True
+      selectVideoDoneLabel.set_text("Done!")
   def on_selectVideoOutputButton_clicked(self, button):
     global videoOutputDirectory
+    global setVideoOutputDirectory
     videoOutputDirectory = tkFileDialog.askdirectory(parent=root,initialdir="/home",title='Select an empty output directory')
-    selectVideoOutputDoneLabel.set_text("Done!")
+    if(isinstance(videoOutputDirectory, str)):
+      setVideoOutputDirectory = True
+      selectVideoOutputDoneLabel.set_text("Done!")
   def on_startVideoConvertionButton_clicked(self, button):
-    os.system("ffmpeg -i '" + videoInputFile + "' '" + videoOutputDirectory + "/image-%01d.png' -hide_banner")
-    videoConvertionDoneLabel.set_text("Done!")
+    global outputDirectory
+    if(setVideoInputFile == True and setVideoOutputDirectory == True):
+      os.system("ffmpeg -i '" + videoInputFile + "' '" + videoOutputDirectory + "/image-%01d.png' -hide_banner")
+      videoConvertionDoneLabel.set_text("Done!")
+      if(isinstance(videoOutputDirectory, str)):
+        outputDirectory = videoOutputDirectory
+        selectDirectoryDoneLabel.set_text("Done!")
   def on_selectDirectoryButton_clicked(self, button):
     global outputDirectory
     outputDirectory = tkFileDialog.askdirectory(parent=root,initialdir="/home",title='Select directory with .png files')
