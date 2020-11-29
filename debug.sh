@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo Running "plymouth-creator.py"...
-python plymouth-creator.py
+python2 plymouth-creator.py
 echo Done!
 
 echo Waiting...
