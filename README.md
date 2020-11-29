@@ -23,3 +23,6 @@ Afterwards, the script will launch the GUI, which is self explanation.
 
 ## Screenshot:
 ![screenshot1](https://raw.githubusercontent.com/Techcrafter/Plymouth-Creator/master/SCREENSHOTS/screenshot1.png)
+
+## If you need help:
+[Visit my Discord server](https://discord.gg/urxKEzf)
