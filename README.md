@@ -19,7 +19,7 @@ When you're done, you can apply it on your own computer, or you can share it wit
 ## How to run:
 Download the .zip or the .tar.gz file with the source code from the [releases section](https://github.com/Techcrafter/Plymouth-Creator/releases) and extract it.
 
-On Debian based systems, open the file "RUN ME.sh" in the terminal to install the needed dependencies. Alternatively, install the [#dependencies](dependencies) manually.
+On Debian based systems, open the file "RUN ME.sh" in the terminal to install the needed dependencies. Alternatively, install the [dependencies](#dependencies) manually.
 
 The script will install the needed packages, so you'll eventually need to enter your sudo password.
 Afterwards, the script will launch the GUI and you can start working on your custom boot animation.
