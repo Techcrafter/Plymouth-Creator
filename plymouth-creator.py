@@ -1,6 +1,7 @@
 import os
 import glob
-import Tkinter, tkFileDialog
+from tkinter import filedialog
+from tkinter import *
 from subprocess import call
 
 import gi
@@ -20,21 +21,21 @@ description = ""
 loopAnimation = None
 scaleImages = None
 
-root = Tkinter.Tk()
+root = Tk()
 root.withdraw()
 
 class Handler:
   def on_selectVideoButton_clicked(self, button):
     global videoInputFile
     global setVideoInputFile
-    videoInputFile = tkFileDialog.askopenfilename(parent=root,initialdir="/home",title='Select your .mp4 video',filetypes = (("mp4 files","*.mp4"),("all files","*.*")))
+    videoInputFile = filedialog.askopenfilename(parent=root,initialdir="/home",title='Select your .mp4 video',filetypes = (("mp4 files","*.mp4"),("all files","*.*")))
     if(isinstance(videoInputFile, str)):
       setVideoInputFile = True
       selectVideoDoneLabel.set_text("Done!")
   def on_selectVideoOutputButton_clicked(self, button):
     global videoOutputDirectory
     global setVideoOutputDirectory
-    videoOutputDirectory = tkFileDialog.askdirectory(parent=root,initialdir="/home",title='Select an empty output directory')
+    videoOutputDirectory = filedialog.askdirectory(parent=root,initialdir="/home",title='Select an empty output directory')
     if(isinstance(videoOutputDirectory, str)):
       setVideoOutputDirectory = True
       selectVideoOutputDoneLabel.set_text("Done!")
@@ -50,7 +51,7 @@ class Handler:
         selectDirectoryDoneLabel.set_text("Done!")
   def on_selectDirectoryButton_clicked(self, button):
     global outputDirectory
-    outputDirectory = tkFileDialog.askdirectory(parent=root,initialdir="/home",title='Select directory with .png files')
+    outputDirectory = filedialog.askdirectory(parent=root,initialdir="/home",title='Select directory with .png files')
     if(isinstance(outputDirectory, str)):
         setOutputDirectory = True
         selectDirectoryDoneLabel.set_text("Done!")
