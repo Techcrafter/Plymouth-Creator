@@ -50,11 +50,12 @@ class Handler:
         outputDirectory = videoOutputDirectory
         selectDirectoryDoneLabel.set_text("Done!")
   def on_selectDirectoryButton_clicked(self, button):
+    global setOutputDirectory
     global outputDirectory
     outputDirectory = filedialog.askdirectory(parent=root,initialdir="/home",title='Select directory with .png files')
     if(isinstance(outputDirectory, str)):
-        setOutputDirectory = True
-        selectDirectoryDoneLabel.set_text("Done!")
+      setOutputDirectory = True
+      selectDirectoryDoneLabel.set_text("Done!")
   def on_generateButton_clicked(self, button):
     global name
     global description
